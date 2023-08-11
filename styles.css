@@ -1,0 +1,141 @@
+/*PSEUDO CLASES*/
+/*Es un selector que permite dar tipos de personalizaciones dinamicas 
+como alterar o cambiar de colo a un elemento al colocar el cursor encima
+de dicho elemento*/
+
+.caja1{
+    background-color: skyblue;
+    width: 300px;
+    height: 300px;
+}
+
+.caja1:hover{
+    background-color: green;
+    width: 300px;
+    height: 300px;
+}
+
+a{
+    color: red;
+}
+
+a:hover{
+    color:blue;
+    font-size: 2rem;
+}
+a:active{
+    color:brown;
+    font-size: 3rem;
+}
+a:target{
+    color: yellow;
+}
+a:visited{
+    color: teal;
+}
+
+h1{
+    color: red;
+}
+h1::first-line{
+    color: green;
+}
+h1::first-letter{
+    color: blueviolet;
+}
+
+/*..........................................................*/
+/*PSEUDO ELEMENTOS*/
+/*Son elementos que no necesariamente se coloca en html, nos permite dar,
+estilos, cambiar de colores y permite dar posicionamimento dentro del elemento
+padre. tambien nos permite hacer combinaciones entre pseudo clases y pseudo 
+elementos, como un hover y before*/
+.caja2{
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    position: relative;
+}
+
+.caja2 .hijo:first-child{
+    color: red;
+}
+.caja2 .hijo:last-child{
+    color: blue;
+}
+/*.caja2 .hijo:nth-child(2n){
+    color: yellow;
+}*/
+.caja2 .hijo:nth-child(odd) {
+    color: yellow;
+}
+.caja2 .hijo:nth-child(even) {
+    color: red; 
+}
+
+
+.caja3{
+    width: 200px;
+    height: 200px;
+    background-color: greenyellow;
+    position: relative;
+    bottom: 1rem;
+}
+.caja3::before{
+    content: "Hola";
+    position: absolute;
+    right: 45%;
+    bottom: 50%;
+    background-color: green;
+}
+.caja3::after{
+    content: "Adiós";
+}
+
+
+/*POSICIONAMIENTO*/
+/*Para que se pueda usar las propiedades como top,witdth,botton,height y 
+tambien z-index se tiene que colocar "position realative" si o si para dar
+uso de dichas propiedades, mediante position absolute mediante un hijo 
+del padre por medio de un elemento como "bejore o after"*/
+
+.caja4{
+    width: 300px;
+    height: 300px;
+    background-color: skyblue;
+    position: relative;
+}
+
+.caja-facebook{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.caja5{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: relative;
+    z-index: 20;
+}
+.caja6{
+    width: 200px;
+    height: 200px;
+    background-color:blueviolet;
+    position: relative;
+    bottom: 5rem;
+    z-index: 15;
+}
+
+h2{
+    color: red;
+    position:sticky;
+    bottom: 0;
+    left: 0;
+}
+
